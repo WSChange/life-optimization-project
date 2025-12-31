@@ -35,6 +35,7 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IS
             Shop shop = JSONUtil.toBean(shopJson, Shop.class);
             return Result.ok(shop);
         }
+        // 根据id查询数据库
         Shop shop = getById(id);
         if (shop == null){
             return Result.fail("店铺不存在！");
