@@ -57,9 +57,15 @@ public class ShopController {
      */
     @PutMapping
     public Result updateShop(@RequestBody Shop shop) {
+
+/*
         // 写入数据库
+        原有方法直接使用Mybatis-plus框架自带方法实现
         shopService.updateById(shop);
-        return Result.ok();
+        return Result.ok();*/
+        //
+        // 通过service自定义方法实现
+        return shopService.update(shop);
     }
 
     /**
