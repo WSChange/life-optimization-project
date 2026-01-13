@@ -60,6 +60,9 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
             // 库存不足
             return Result.fail("库存不足！");
         }
+        //6. 一人一单
+        //6.1 查询订单
+        //6.2 判断是否存在
         //6. 创建订单
         VoucherOrder voucherOrder = new VoucherOrder();
         //6.1 订单id
