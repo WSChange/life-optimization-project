@@ -11,7 +11,8 @@ import java.util.concurrent.TimeUnit;
 
 public class SimpleRedisLock implements ILock{
 
-    private String name;// 锁名称
+    // 锁名称
+    private String name;
     private StringRedisTemplate stringRedisTemplate;
 
     public SimpleRedisLock(String name, StringRedisTemplate stringRedisTemplate) {
@@ -41,7 +42,6 @@ public class SimpleRedisLock implements ILock{
         return Boolean.TRUE.equals(success);
     }
 
-    @Override
     public void unLock() {
         // 调用lua脚本
         stringRedisTemplate.execute(
